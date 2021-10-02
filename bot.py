@@ -8,7 +8,7 @@ from PIL import Image
 
 from face_crop import FaceCrop
 
-TOKEN = 'ODkwMjUwNzA5NTk1OTgzOTMy.YUtElQ.sapZm4Ifg5WANjYOms689UG3plk'
+TOKEN = 'token here'
 IMAGE_TYPES = ["png", "jpeg", "jpg"]
 ACTIONS = ['gender', 'race', 'emotion', 'age']
 EMOJI_MAPPING = {
