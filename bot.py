@@ -72,13 +72,8 @@ async def on_reaction_add(reaction, user):
                 # After running inference on all images and sending them in the channel, remove instance from to_be_cropped
                 fc.to_be_cropped.pop(reaction.message.reference.message_id)
                 # And remove message
-                # await reaction.message.delete()
+                await reaction.message.delete()
                 await bot_response.edit(content="Done!")
-                            
-
-
-
-
 
 
 @client.event

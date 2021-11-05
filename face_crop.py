@@ -41,9 +41,9 @@ class FaceCrop(object):
     # Input: PIL
     # Output: PIL after segmentation
     def face_crop_and_segment(self, image):
-            result_after_cropping = face_utils.find_face(image)
-            result_after_segmentation = inference.run(result_after_cropping)
-            return result_after_segmentation
+        result_after_cropping = face_utils.find_face(image)
+        result_after_segmentation = inference.run(result_after_cropping, model_no=1)
+        return result_after_segmentation
 
     # Input: PIL Image
     # Output: 
