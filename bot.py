@@ -1,14 +1,12 @@
 import discord
-import os
 from quickselect_dl import face_utils
 from quickselect_dl import inference
 import io
-import PIL
 from PIL import Image
-
 from face_crop import FaceCrop
+from credentials import DISCORD_TOKEN
 
-TOKEN = 'token here'
+
 IMAGE_TYPES = ["png", "jpeg", "jpg"]
 ACTIONS = ['gender', 'race', 'emotion', 'age']
 EMOJI_MAPPING = {
@@ -78,7 +76,7 @@ async def on_reaction_add(reaction, user):
 
 @client.event
 async def on_message(message):
-    if message.content[0:5] == '-crop':
+    if message.content.startswith("-crop"):
         # if full crop or face only
         face_crop = message.content == '-crop face'
 
@@ -169,4 +167,4 @@ async def on_message(message):
                     await message.channel.send("Something went wrong. Please try a different image.")
 
         
-client.run(TOKEN)
+client.run(DISCORD_TOKEN)
